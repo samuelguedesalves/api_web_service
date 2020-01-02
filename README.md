@@ -1,5 +1,11 @@
 # API ROUTERS
 
+This project is a API to **_Note List_**  Web App
+
+> This project use <a href="https://expressjs.com/" >__Express.js__</a>, <a href="https://github.com/axios/axios">__Axios__</a>, <a href="https://github.com/expressjs/cors">__Cors__</a> and __Database__ to <a href="https://firebase.google.com/?hl=pt-br" >__Firebase__</a>
+
+___
+
 ## LOGIN
 This router is responsible for login to user, and init a session.
 > https://api-carrot.herokuapp.com/login
