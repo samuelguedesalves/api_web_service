@@ -97,6 +97,13 @@ api.post('/new_user', (req, res)=>{
     }
 });
 
+//router logout
+api.post('/logout', (req, res) => {
+    var user_toke  = req.body.user_token;
+    var req_logout = authUser.removeUser(user_toke);
+    res.send( { status: req_logout.status });
+})
+
 // rota de listagem de produtos
 api.get('/my_task', (req, res)=>{
     
@@ -120,4 +127,9 @@ api.get('/', (req, res) => {
             .catch((err)=>{
                 res.send({ insert: false });
             });
+});
+
+api.get('/loged_users', (req, res) => {
+    var users = authUser.seeAll();
+    res.send({ users });
 });
