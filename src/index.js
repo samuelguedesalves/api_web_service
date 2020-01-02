@@ -111,18 +111,7 @@ function countObject(obj){
 api.get('/', (req, res) => {
     axios.get('https://carrot-9b7e4.firebaseio.com/Carrot/Users.json')
             .then((response) => {
-                
-                /*
-                var objectNumber = countObject(response.data);
-                //console.log(response.data['-LxYjWNAppyq1qz1wmRH'] );
-                
-                for(var i in response.data){
-                    //console.log(response.data[i]);
-                    if(response.data[i]);
-                    
-                }
-                */
-                res.send({ response });
+                res.send( response.data );
             })
             .catch((err)=>{
                 res.send({ insert: false });
