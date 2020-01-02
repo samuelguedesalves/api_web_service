@@ -112,6 +112,7 @@ api.get('/', (req, res) => {
     axios.get('https://carrot-9b7e4.firebaseio.com/Carrot/Users.json')
             .then((response) => {
                 
+                /*
                 var objectNumber = countObject(response.data);
                 //console.log(response.data['-LxYjWNAppyq1qz1wmRH'] );
                 
@@ -120,8 +121,8 @@ api.get('/', (req, res) => {
                     if(response.data[i]);
                     
                 }
-
-                res.send({ resposta });
+                */
+                res.send({ response });
             })
             .catch((err)=>{
                 res.send({ insert: false });
