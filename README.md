@@ -2,7 +2,7 @@
 
 This project is a API to **_Note List_**  Web App
 
-> This project use <a href="https://expressjs.com/" >__Express.js__</a>, <a href="https://github.com/axios/axios">__Axios__</a>, <a href="https://github.com/expressjs/cors">__Cors__</a> and <a href="https://firebase.google.com/?hl=pt-br" >__Firebase__</a> to __Database__.
+> This project use <a href="https://expressjs.com/" >__Express.js__</a>, <a href="https://github.com/axios/axios">__Axios__</a>, <a href="https://github.com/expressjs/cors">__Cors__</a>, <a href="https://firebase.google.com/?hl=pt-br" >__Firebase__</a> to __Database__ and <a href="https://www.heroku.com/" >__Heroku__</a> to VPS.
 
 ___
 
