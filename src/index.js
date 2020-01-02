@@ -7,7 +7,7 @@ const api = express();
 api.use(cors());
 api.use(express.json());
 
-const apiPort = 4567 || process.env.PORT;
+const apiPort = process.env.PORT || 4567 ;
 
 api.listen( apiPort , ()=>{
     console.log('API is run in port: '+ apiPort);
