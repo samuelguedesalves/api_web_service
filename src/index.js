@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios').default;
 
+const authUser = require('./authUser');
+
 const api = express();
 
 api.use(cors());
@@ -30,7 +32,8 @@ api.post('/login', (req, res)=>{
                     if(response_database.data[i].email === email){
                         if(response_database.data[i].password === password){
                             state = true;
-                            res.send({log: true, username: response_database.data[i].name, userId: i });
+                            var tokenUser = authUser.addUser(i);
+                            res.send({log: true, username: response_database.data[i].name, token: tokenUser });
                         }else{
                             state = true;
                             res.send({ log: false });
