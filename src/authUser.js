@@ -59,6 +59,15 @@ const funtionBlock = {
 
     seeAll(){
         return LoggedUsers;
+    },
+
+    verificLogged(user_token){
+        for(i in LoggedUsers){
+            if ( LoggedUsers[i].Token === user_token ) {
+                return ({state: true, user_id: LoggedUsers[i].UserId });
+            }
+        }
+        return ({state: false });
     }
 
 }

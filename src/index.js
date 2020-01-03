@@ -104,9 +104,29 @@ api.post('/logout', (req, res) => {
     res.send( { status: req_logout.status });
 })
 
-// rota de listagem de produtos
-api.get('/my_task', (req, res)=>{
-    
+// rota de listagem de tarefas
+api.post('/my_task', (req, res)=>{
+    var user_token = req.body.user_token;
+    var state = authUser.verificLogged(user_token);
+    if ( state.state = true ) {
+        axios.get("https://carrot-9b7e4.firebaseio.com/Carrot/Task.json")
+            .then((response) => {
+                //res.send(response.data);
+                var listTask = [];
+                for(i in response.data){
+                    if(response.data[i].user_id === state.user_id){
+                        listTask.push({ task_id: i, task_note: response.data[i].task_text } );
+                    }
+                }
+
+                res.send( listTask );
+            })
+            .catch((error)=>{
+                res.sendStatus(500);
+            });
+    }else{
+        res.sendStatus(400);
+    }
 });
 
 function countObject(obj){
