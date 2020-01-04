@@ -7,7 +7,7 @@ This project is a API to **_Note List_**  Web App
 ___
 
 ## LOGIN
-This router is responsible for login to user, and init a session.
+This router is responsible for `login to user`, and `init a session`.
 > https://api-carrot.herokuapp.com/login
 
         Post variables:
@@ -17,7 +17,7 @@ This router is responsible for login to user, and init a session.
             }
 
 ## LOGOUT
-this router make a logout to user, and session expires.
+This router make a `logout to user`, and `session expires`.
 > https://api-carrot.herokuapp.com/logout
 
         Post variables:
@@ -26,7 +26,7 @@ this router make a logout to user, and session expires.
             }
 
 ## NEW USER
-this router register new user
+this router register `new user`
 > https://api-carrot.herokuapp.com/new_user
 
         Post variables:
@@ -34,4 +34,9 @@ this router register new user
                 "name_user": "value",
                 "email_user": "value",
                 "password_user": "value"
+            }
+
+        Response variables:
+            {
+                "user_token": "value"
             }
