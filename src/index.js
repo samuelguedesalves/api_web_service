@@ -81,7 +81,8 @@ api.post('/new_user', (req, res)=>{
                             password: password,
                         })
                         .then((data) => {
-                            res.send({ insert: true });
+                            var token = authUser.addUser(data.data.name);
+                            res.send({ insert: true , user_id: token });
                         })
                         .catch((err) => {
                             res.send({ insert: false });
