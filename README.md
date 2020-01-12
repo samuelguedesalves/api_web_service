@@ -4,6 +4,18 @@ This project is a API to **_Note List_**  Web App
 
 > This project use <a href="https://expressjs.com/" >__Express.js__</a>, <a href="https://github.com/axios/axios">__Axios__</a>, <a href="https://github.com/expressjs/cors">__Cors__</a>, <a href="https://firebase.google.com/?hl=pt-br" >__Firebase__</a> to __Database__ and <a href="https://www.heroku.com/" >__Heroku__</a> to VPS.
 
+---
+## Start this aplication
+**Open your bash and write**
+````bash
+$ git clone https://github.com/samuelguedesalves/api_web_service.git
+
+$ cd api_web_service
+
+$ npm install
+
+$ npm start
+````
 ___
 
 ## LOGIN
@@ -39,4 +51,17 @@ this router register `new user`
         Response variables:
             {
                 "user_token": "value"
+            }
+
+## LIST TASK
+this router return a task list to user, using user token
+> https://api-carrot.herokuapp.com/my_task
+
+        Post variables:
+            {
+                "user_token": "value"
+            }
+        Response:
+            {
+                
             }
