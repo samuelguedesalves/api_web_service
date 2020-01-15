@@ -20,48 +20,118 @@ ___
 
 ## LOGIN
 This router is responsible for `login to user`, and `init a session`.
-> https://api-carrot.herokuapp.com/login
+> https://api-carrot.herokuapp.com/auth/authenticate
 
-        Post variables:
-            {
-                "user_email": "value",
-                "user_password" : "value"
-            }
+````bash
+Method: POST
 
-## LOGOUT
-This router make a `logout to user`, and `session expires`.
-> https://api-carrot.herokuapp.com/logout
+Request Body: {
+    email : "<e-mail>",
+    password : "<password>",
+}
 
-        Post variables:
-            {
-                "user_token": "value"
-            }
+response:{
+    user: { "name", "email"},
+    token: "token"
+}
+````
+> **obs: save this response token in _LocalStorege_, and use in request router to app**
 
-## NEW USER
+## REGISTER
 this router register `new user`
-> https://api-carrot.herokuapp.com/new_user
+> https://api-carrot.herokuapp.com/auth/register
 
-        Post variables:
-            {
-                "name_user": "value",
-                "email_user": "value",
-                "password_user": "value"
-            }
+````bash
+Method: POST
 
-        Response variables:
-            {
-                "user_token": "value"
-            }
+Request Body: {
+    name: "<name>",
+    email: "<e-mail>",
+    password: "<password>"
+}
 
-## LIST TASK
-this router return a task list to user, using user token
-> https://api-carrot.herokuapp.com/my_task
+Response:{
+    user: { "name", "email" },
+    token: "token"
+}
+````
+> **obs: save this response token in _LocalStorege_, and use in request router to app**
 
-        Post variables:
-            {
-                "user_token": "value"
-            }
-        Response:
-            {
-                
-            }
+## LIST
+this router return a note list to user, using user token
+> https://api-carrot.herokuapp.com/app/list
+
+````bash
+Method: GET
+
+Request Header:{
+    Authorization: "<token>"
+}
+
+Response:{
+    notes: {
+        "<Note list>"
+    }
+}
+````
+
+## CREATE
+this Router is used for create a task
+> https://api-carrot.herokuapp.com/app/create
+
+````bash
+Method: POST
+
+Request:{
+    Body:{
+        text: "<text note>"
+    },
+    Header: {
+        Authorization: "<token>"
+    }
+}
+
+Response:{
+    _id: "note id",
+    text: "text note"
+}
+````
+
+## UPDATE
+this router realize a task update
+> https://api-carrot.herokuapp.com/app/update
+
+````bash
+Method: PUT
+
+Request: {
+    Body: {
+        noteId: "<note id>",
+        text: "<new note text>"
+    },
+    Header: {
+        Authorization: "<token>"
+    }
+}
+````
+
+## DESTROY
+this router destroy a note
+> https://api-carrot.herokuapp.com/app/destroy
+
+````bash
+Method: DELETE
+
+Request: {
+    Header: {
+        Authorization: "<token>",
+    },
+    Query: {
+        noteId: "<note id>"
+    }
+}
+
+Response: {
+    Status: true
+}
+````
